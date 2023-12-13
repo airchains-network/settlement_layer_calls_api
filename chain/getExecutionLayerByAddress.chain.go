@@ -5,26 +5,8 @@ import (
 	"fmt"
 	"io/ioutil"
 	"encoding/json"
+	"github.com/airchains-studio/settlement_layer_calls_api/model"
 )
-
-type ExecutionLayerTrueResponseBody struct {
-	ExeLayer struct {
-		Validator             []string `json:"validator"`
-		VotingPower           []string `json:"votingPower"`
-		LatestBatch           string   `json:"latestBatch"`
-		LatestMerkleRootHash  string   `json:"latestMerkleRootHash"`
-		VerificationKey       string   `json:"verificationKey"`
-		ChainInfo             string   `json:"chainInfo"`
-		ID                    string   `json:"id"`
-		Creator               string   `json:"creator"`
-	} `json:"exelayer"`
-}
-
-type ExecutionLayerErrorResponseBody struct {
-	Code    int      `json:"code"`
-	Message string   `json:"message"`
-	Details []string `json:"details"`
-}
 
 func GetExecutionLayerByAddress(address string, sAPI string) (success bool, chainId string){
 
@@ -46,17 +28,17 @@ func GetExecutionLayerByAddress(address string, sAPI string) (success bool, chai
 	fmt.Println(string(body))
 
 	// Check the structure of the response body to determine the appropriate struct
-	var executionLayerResponse ExecutionLayerTrueResponseBody
+	var executionLayerResponse model.ExecutionLayerTrueResponseBody
 	if err := json.Unmarshal(body, &executionLayerResponse); err == nil {
 		if len(executionLayerResponse.ExeLayer.ID) == 0 {
 			return false, ""
-		}else{
+		} else {
 			return true , string(body)
 		}
 	}
 
 	// code may not reach here... but just in case
-	var executionLayerErrResponse ExecutionLayerErrorResponseBody
+	var executionLayerErrResponse model.ExecutionLayerErrorResponseBody
 	if err := json.Unmarshal(body, &executionLayerErrResponse); err == nil {
 		// Successfully unmarshaled into ExecutionLayerErrorResponseBody
 		return false, ""

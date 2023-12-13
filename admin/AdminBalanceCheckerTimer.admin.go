@@ -71,4 +71,3 @@ func InformAdmin(message string, msgtype string){
 		time.Sleep(1 * time.Hour)
 	}
 }
-

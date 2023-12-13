@@ -1,4 +1,5 @@
 package chain 
+
 import (
 	"github.com/ignite/cli/ignite/pkg/cosmosaccount"
 	"fmt"

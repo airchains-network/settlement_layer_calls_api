@@ -7,19 +7,15 @@ import (
 	"github.com/ignite/cli/ignite/pkg/cosmosaccount"
 	cosmosclient "github.com/ignite/cli/ignite/pkg/cosmosclient"
 	"github.com/syndtr/goleveldb/leveldb"
-)
+	"github.com/airchains-studio/settlement_layer_calls_api/model"
 
-// RequestBody is the structure for the incoming JSON request
-type RequestBodyAddExecutionLayer struct {
-	VerificationKey string `json:"verification_key"`
-	ChainInfo       string `json:"chain_info"`
-}
+)
 
 // HandlePostAPI handles the POST request
 func HandlePostAddExecutionLayer(c *gin.Context, client cosmosclient.Client, ctx context.Context, account cosmosaccount.Account, addr string, dbIPaddress *leveldb.DB, sAPI string) {
 
 	// Parse the request body into a struct
-	var requestBody RequestBodyAddExecutionLayer
+	var requestBody model.RequestBodyAddExecutionLayer
 	if err := c.BindJSON(&requestBody); 
 	err != nil {
 		respondWithError(c, "Invalid JSON format")

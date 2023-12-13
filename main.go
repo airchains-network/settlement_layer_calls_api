@@ -4,18 +4,17 @@ import (
 	"github.com/airchains-studio/settlement_layer_calls_api/chain"
 	"github.com/airchains-studio/settlement_layer_calls_api/api"
 	"github.com/airchains-studio/settlement_layer_calls_api/admin"
-	"github.com/airchains-studio/settlement_layer_calls_api/connect"
+	"github.com/airchains-studio/settlement_layer_calls_api/config"
 	"sync"
-
 )
 
 func main(){
 
 	// connect to blockchain (settlement layer) && create admin wallet if do not exists
-	client, account, addr , ctx, sAPI := connect.SettlementLayer()
+	client, account, addr , ctx, sAPI := config.SettlementLayer()
 
 	// connect to levelDB
-	dbIPaddress := connect.LevelDB()
+	dbIPaddress := config.LevelDB()
 
 	// check admin balance
 	isBalance, amount, err := chain.CheckBalance(ctx, addr, client)

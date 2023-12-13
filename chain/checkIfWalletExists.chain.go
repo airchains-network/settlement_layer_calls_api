@@ -1,9 +1,11 @@
 package chain 
+
 import (
 	"github.com/ignite/cli/ignite/pkg/cosmosaccount"
 	"fmt"
 	"github.com/ignite/cli/ignite/pkg/cosmosclient"
 )
+
 func CheckIfAccountExists(accountName string, client cosmosclient.Client , addressPrefix string,accountPath string) (bool,string) {
 
 	registry, err := cosmosaccount.New(cosmosaccount.WithHome(accountPath))

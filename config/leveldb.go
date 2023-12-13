@@ -1,4 +1,4 @@
-package connect
+package config
 
 import (
 	"github.com/syndtr/goleveldb/leveldb"

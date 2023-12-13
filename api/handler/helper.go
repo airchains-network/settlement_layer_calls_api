@@ -1,17 +1,11 @@
-package handler
+package handler 
 import (
 	"net/http"
 	"github.com/gin-gonic/gin"
     "github.com/syndtr/goleveldb/leveldb"
 	"fmt"
+	"github.com/airchains-studio/settlement_layer_calls_api/model"
 )
-
-// ResponseBody is the structure for the JSON response
-type ResponseBody struct {
-	Status bool   `json:"status"`
-	Data   string `json:"data"`
-	Description string `json:"description"`
-}
 
 func formatErrorMessage(err error) string {
     if err == nil {
@@ -22,7 +16,7 @@ func formatErrorMessage(err error) string {
 
 // respondWithError sends a JSON error response
 func respondWithError(c *gin.Context,error_msg string) {
-	response := ResponseBody{
+	response := model.ResponseBody{
 		Status : false,
 		Data : "",
 		Description : error_msg,
@@ -33,7 +27,7 @@ func respondWithError(c *gin.Context,error_msg string) {
 
 // respondWithJSON sends a JSON response
 func respondWithSuccess(c *gin.Context, data string, description string) {
-	response := ResponseBody{
+	response := model.ResponseBody{
 		Status : true,
 		Data : data,
 		Description : description,

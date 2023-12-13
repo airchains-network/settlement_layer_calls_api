@@ -18,9 +18,11 @@ func StartAPI(wg *sync.WaitGroup, client cosmosclient.Client, ctx context.Contex
 
 	// Create a new router
     router := gin.Default()
+
+	// define port for api
+	port := ":8080"
 	
-	
-	// * Register the handlers
+	// * Register the Handlers / Routers
 
 	// add execution layer
 	router.POST("/addexelayer", func(c *gin.Context) {
@@ -36,11 +38,15 @@ func StartAPI(wg *sync.WaitGroup, client cosmosclient.Client, ctx context.Contex
 	router.GET("/getexelayer_by_id", func(c *gin.Context) {
 		handler.HandleGetExecutionLayerById(c,client,ctx, account,addr,db, sAPI)
 	})
-	
 
-	// Run the server on port 8080
-	if err := router.Run(":8080"); err != nil {
+	// get all execution layers
+	router.GET("/get_all_exelayer", func(c *gin.Context) {
+		handler.HandleGetAllExecutionLayers(c,client,ctx, account,addr,db, sAPI)
+	})
+
+	
+	// Run the server on given port
+	if err := router.Run(port); err != nil {
 		fmt.Println("Error starting the server:", err)
 	}
-
 }

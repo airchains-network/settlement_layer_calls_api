@@ -23,7 +23,7 @@ func AddExecutionLayer(verificationKey string,chainInfo string , client cosmoscl
 	}
 
 	// get execution layer by address
-	success,chainDetails	:= GetExecutionLayerByAddress(addr,sAPI) 
+	success, chainDetails := GetExecutionLayerByAddress(addr,sAPI) 
 	if !success {
 		return false,"","error in receiving execution layer"
 	}

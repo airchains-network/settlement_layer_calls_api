@@ -7,7 +7,6 @@ import (
 	"context"
 )
 
-
 func CheckBalance(ctx context.Context, accountAddress string, client cosmosclient.Client) (bool,int64,error) {
 	pageRequest := &query.PageRequest{} // Add this line to create a new PageRequest
 

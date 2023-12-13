@@ -4,6 +4,7 @@ import (
 	"net/http"
 	"io/ioutil"
 	"encoding/json"
+	"github.com/airchains-studio/settlement_layer_calls_api/model"
 )
 
 func GetExecutionLayerById(id string, sAPI string) (success bool, chainId string){
@@ -24,7 +25,7 @@ func GetExecutionLayerById(id string, sAPI string) (success bool, chainId string
 	}
 
 	// Check the structure of the response body to determine the appropriate struct
-	var executionLayerResponse ExecutionLayerTrueResponseBody
+	var executionLayerResponse model.ExecutionLayerTrueResponseBody
 	if err := json.Unmarshal(body, &executionLayerResponse); err == nil {
 		if len(executionLayerResponse.ExeLayer.ID) == 0 {
 			return false, ""
@@ -34,7 +35,7 @@ func GetExecutionLayerById(id string, sAPI string) (success bool, chainId string
 	}
 
 	// code may not reach here... but just in case
-	var executionLayerErrResponse ExecutionLayerErrorResponseBody
+	var executionLayerErrResponse model.ExecutionLayerErrorResponseBody
 	if err := json.Unmarshal(body, &executionLayerErrResponse); err == nil {
 		// Successfully unmarshaled into ExecutionLayerErrorResponseBody
 		return false, ""
