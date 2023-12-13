@@ -12,7 +12,7 @@ import (
 func main(){
 
 	// connect to blockchain (settlement layer) && create admin wallet if do not exists
-	client, account, addr , ctx := connect.SettlementLayer()
+	client, account, addr , ctx, sAPI := connect.SettlementLayer()
 
 	// connect to levelDB
 	dbIPaddress := connect.LevelDB()
@@ -33,7 +33,7 @@ func main(){
 
 		var wg sync.WaitGroup 
 		wg.Add(2)
-		go api.StartAPI(&wg, client,ctx, account,addr,dbIPaddress)
+		go api.StartAPI(&wg, client,ctx, account,addr,dbIPaddress,sAPI)
 		go admin.AdminBalanceCheckerTimer(&wg, ctx, client,account, addr,dbIPaddress)
 	
 		// Wait for both functions to finish
