@@ -66,12 +66,8 @@ github.com/OneOfOne/xxhash v1.2.8 h1:31czK/TI9sNkxIKfaUfGlU47BAxQ0ztGgd9vPyqimf8
 github.com/OneOfOne/xxhash v1.2.8/go.mod h1:eZbhyaAYD41SGSSsnmcpxVoRiQ/MPUTjUdIIOT9Um7Q=
 github.com/VividCortex/gohistogram v1.0.0 h1:6+hBz+qvs0JOrrNhhmR7lFxo5sINxBCGXrdtl/UvroE=
 github.com/VividCortex/gohistogram v1.0.0/go.mod h1:Pf5mBqqDxYaXu3hDrrU+w6nw50o/4+TcAqDqk/vUH7g=
-github.com/airchains-network/airsettle v0.0.0-20231211103134-8bc302686ec3 h1:ufDtuzBas/cNu0YuUAgbP9IMqJ0br4tFHk2sf4fDQ1E=
-github.com/airchains-network/airsettle v0.0.0-20231211103134-8bc302686ec3/go.mod h1:87ByNQSx8G+Rg+hJpymgu8guL9qtr9mowPG6X6BI+nw=
-github.com/airchains-network/airsettle v0.0.0-20231212093605-4e2e77bddb87 h1:yhch6uKGD25TlQ6ciuLa0A8wLwzZ0z0OtG0tULc0iuo=
-github.com/airchains-network/airsettle v0.0.0-20231212093605-4e2e77bddb87/go.mod h1:DQWAa3Ui0zmdBIw3+ZCYM1eCDdHEvjuWWz2CMTJRYvo=
-github.com/airchains-network/airsettle v0.0.0-20231213085920-a82723372a50 h1:byN3V233qd8ovH1I0pCTEz1qBCgGCl+jGctt6T++qlw=
-github.com/airchains-network/airsettle v0.0.0-20231213085920-a82723372a50/go.mod h1:DQWAa3Ui0zmdBIw3+ZCYM1eCDdHEvjuWWz2CMTJRYvo=
+github.com/airchains-network/airsettle v0.0.0-20231214073610-695f5915d4eb h1:86w6IwTDM5jVBdmw2BcYiRgZF58nnWiRKtKwUzV9Cfs=
+github.com/airchains-network/airsettle v0.0.0-20231214073610-695f5915d4eb/go.mod h1:DQWAa3Ui0zmdBIw3+ZCYM1eCDdHEvjuWWz2CMTJRYvo=
 github.com/alecthomas/template v0.0.0-20160405071501-a0175ee3bccc/go.mod h1:LOuyumcjzFXgccqObfd/Ljyb9UuFJ6TxHnclSeseNhc=
 github.com/alecthomas/template v0.0.0-20190718012654-fb15b899a751/go.mod h1:LOuyumcjzFXgccqObfd/Ljyb9UuFJ6TxHnclSeseNhc=
 github.com/alecthomas/units v0.0.0-20151022065526-2efee857e7cf/go.mod h1:ybxpYRFXyAe+OPACYpWeL0wqObRcbAqCMya13uyzqw0=

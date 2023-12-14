@@ -3,7 +3,7 @@ module github.com/airchains-studio/settlement_layer_calls_api
 go 1.21.1
 
 require (
-	github.com/airchains-network/airsettle v0.0.0-20231213085920-a82723372a50
+	github.com/airchains-network/airsettle v0.0.0-20231214073610-695f5915d4eb
 	github.com/cosmos/cosmos-sdk v0.47.5
 	github.com/gin-gonic/gin v1.8.1
 	github.com/ignite/cli v0.27.1

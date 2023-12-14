@@ -44,6 +44,16 @@ func StartAPI(wg *sync.WaitGroup, client cosmosclient.Client, ctx context.Contex
 		handler.HandleGetAllExecutionLayers(c,client,ctx, account,addr,db, sAPI)
 	})
 
+	// get verification key
+	router.GET("/get_vkey", func(c *gin.Context) {
+		handler.HandleGetVerificationKeyById(c,client,ctx, account,addr,db, sAPI)
+	})
+
+	// delete execution layer
+	router.POST("/delete_exelayer", func(c *gin.Context) {
+		handler.HandlePostDeleteExecutionLayer(c,client,ctx, account,addr,db, sAPI)
+	})
+
 	
 	// Run the server on given port
 	if err := router.Run(port); err != nil {

@@ -19,6 +19,10 @@ type ExecutionLayerErrorResponseBody struct {
 	Details []string `json:"details"`
 }
 
+type VerificationKeyResponseBody struct {
+	Vkey string   `json:"vkey"`
+}
+
 // possible response body
 // {"exelayer":[],"pagination":{"next_key":null,"total":"0"}}
 // {"exelayer":{"validator":["air15nt3l400td56dhvy7tk4pehv2rqu2fw53fw59t"],"votingPower":["100"],"latestBatch":"0","latestMerkleRootHash":"0","verificationKey":"/verificationKey/fddd253b-8097-431b-bb94-a158fd51fdd8/","chainInfo":"some information about the chain, e.g. its made for DeFi","id":"fddd253b-8097-431b-bb94-a158fd51fdd8","creator":"air15nt3l400td56dhvy7tk4pehv2rqu2fw53fw59t"}}
