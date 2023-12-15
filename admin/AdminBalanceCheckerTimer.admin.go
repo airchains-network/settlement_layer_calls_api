@@ -16,14 +16,8 @@ func AdminBalanceCheckerTimer(wg *sync.WaitGroup, ctx context.Context,client cos
 	defer wg.Done()
 	_ = db 
 
-	// hourly send token report to admin. eg. how many tokens are left in faucet wallet
-	minuteCount := 0 // 60 minutes = 1 hour
-
 	// check admin balance every minute
 	for{
-		// wait 60 seconds
-		time.Sleep(5 * 60 * time.Second)
-
 		// check client connection
 		_, err := client.Status(ctx)
 		if err != nil {
@@ -43,20 +37,17 @@ func AdminBalanceCheckerTimer(wg *sync.WaitGroup, ctx context.Context,client cos
 		amountStr := strconv.FormatInt(amount, 10)
 		if amount < 100 {
 			InformAdmin("error","Admin dont have enough tokens: " + amountStr)
+		}else{
+			// inform admin
+			InformAdmin("information","Admin have Currently " + amountStr + " tokens") 
 		}
 
-		// send report: inform admin about his/her balance in faucet wallet.
-		minuteCount++
-		if minuteCount > 59 {
-			minuteCount = 0
-			// inform / send report to admin about currecnt balance
-			InformAdmin("information","Admin have Currently" + amountStr + " tokens") 
-		}
-
+		// wait 5 minutes
+		time.Sleep(5 * 60 * time.Second)
 	}
 }
 
-func InformAdmin(message string, msgtype string){
+func InformAdmin(msgtype string, message string){
 	switch(msgtype){
 		case "error":
 			fmt.Println("Error: ",message)
@@ -64,10 +55,5 @@ func InformAdmin(message string, msgtype string){
 			fmt.Println("Information: ",message)
 		default: // default not possible in out case, but still just for safety
 			fmt.Println("Error: ",message)
-	}
-
-	if msgtype == "error" {
-		// after Error, wait for 1 hour. don't waste API in sending same error every minute
-		time.Sleep(1 * time.Hour)
 	}
 }
