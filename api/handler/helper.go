@@ -11,7 +11,7 @@ func formatErrorMessage(err error) string {
     if err == nil {
         return "No error"
     }
-    return fmt.Sprintf("Failed to add execution layer: %v", err.Error())
+    return fmt.Sprintf(err.Error())
 }
 
 // respondWithError sends a JSON error response

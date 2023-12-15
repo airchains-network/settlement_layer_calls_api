@@ -427,3 +427,129 @@
 13:40:22.414465 version@stat F·[] S·0B[] Sc·[]
 13:40:22.434870 db@janitor F·2 G·0
 13:40:22.434924 db@open done T·23.419297ms
+=============== Dec 15, 2023 (IST) ===============
+15:00:22.218846 log@legend F·NumFile S·FileSize N·Entry C·BadEntry B·BadBlock Ke·KeyError D·DroppedEntry L·Level Q·SeqNum T·TimeElapsed
+15:00:22.219308 version@stat F·[] S·0B[] Sc·[]
+15:00:22.219355 db@open opening
+15:00:22.219463 journal@recovery F·1
+15:00:22.220114 journal@recovery recovering @94
+15:00:22.233819 version@stat F·[] S·0B[] Sc·[]
+15:00:22.247161 db@janitor F·2 G·0
+15:00:22.247209 db@open done T·27.832817ms
+=============== Dec 15, 2023 (IST) ===============
+16:06:19.595089 log@legend F·NumFile S·FileSize N·Entry C·BadEntry B·BadBlock Ke·KeyError D·DroppedEntry L·Level Q·SeqNum T·TimeElapsed
+16:06:19.602786 version@stat F·[] S·0B[] Sc·[]
+16:06:19.602887 db@open opening
+16:06:19.603055 journal@recovery F·1
+16:06:19.603845 journal@recovery recovering @96
+16:06:19.606587 version@stat F·[] S·0B[] Sc·[]
+16:06:19.620083 db@janitor F·2 G·0
+16:06:19.620214 db@open done T·17.300165ms
+=============== Dec 15, 2023 (IST) ===============
+16:15:47.404997 log@legend F·NumFile S·FileSize N·Entry C·BadEntry B·BadBlock Ke·KeyError D·DroppedEntry L·Level Q·SeqNum T·TimeElapsed
+16:15:47.405508 version@stat F·[] S·0B[] Sc·[]
+16:15:47.405564 db@open opening
+16:15:47.405698 journal@recovery F·1
+16:15:47.408770 journal@recovery recovering @98
+16:15:47.409874 version@stat F·[] S·0B[] Sc·[]
+16:15:47.441737 db@janitor F·2 G·0
+16:15:47.441839 db@open done T·36.247218ms
+=============== Dec 15, 2023 (IST) ===============
+16:17:11.677124 log@legend F·NumFile S·FileSize N·Entry C·BadEntry B·BadBlock Ke·KeyError D·DroppedEntry L·Level Q·SeqNum T·TimeElapsed
+16:17:11.677578 version@stat F·[] S·0B[] Sc·[]
+16:17:11.677622 db@open opening
+16:17:11.677746 journal@recovery F·1
+16:17:11.678424 journal@recovery recovering @100
+16:17:11.681392 version@stat F·[] S·0B[] Sc·[]
+16:17:11.697982 db@janitor F·2 G·0
+16:17:11.698034 db@open done T·20.39436ms
+=============== Dec 15, 2023 (IST) ===============
+16:21:38.759392 log@legend F·NumFile S·FileSize N·Entry C·BadEntry B·BadBlock Ke·KeyError D·DroppedEntry L·Level Q·SeqNum T·TimeElapsed
+16:21:38.759748 version@stat F·[] S·0B[] Sc·[]
+16:21:38.759791 db@open opening
+16:21:38.759911 journal@recovery F·1
+16:21:38.760541 journal@recovery recovering @102
+16:21:38.762787 version@stat F·[] S·0B[] Sc·[]
+16:21:38.783452 db@janitor F·2 G·0
+16:21:38.783533 db@open done T·23.720078ms
+=============== Dec 15, 2023 (IST) ===============
+16:22:52.512814 log@legend F·NumFile S·FileSize N·Entry C·BadEntry B·BadBlock Ke·KeyError D·DroppedEntry L·Level Q·SeqNum T·TimeElapsed
+16:22:52.513361 version@stat F·[] S·0B[] Sc·[]
+16:22:52.513421 db@open opening
+16:22:52.513579 journal@recovery F·1
+16:22:52.514280 journal@recovery recovering @104
+16:22:52.516827 version@stat F·[] S·0B[] Sc·[]
+16:22:52.539710 db@janitor F·2 G·0
+16:22:52.539840 db@open done T·26.394845ms
+=============== Dec 15, 2023 (IST) ===============
+16:23:24.869375 log@legend F·NumFile S·FileSize N·Entry C·BadEntry B·BadBlock Ke·KeyError D·DroppedEntry L·Level Q·SeqNum T·TimeElapsed
+16:23:24.869696 version@stat F·[] S·0B[] Sc·[]
+16:23:24.869736 db@open opening
+16:23:24.869824 journal@recovery F·1
+16:23:24.870560 journal@recovery recovering @106
+16:23:24.872897 version@stat F·[] S·0B[] Sc·[]
+16:23:24.893821 db@janitor F·2 G·0
+16:23:24.893872 db@open done T·24.117534ms
+=============== Dec 15, 2023 (IST) ===============
+16:23:40.937039 log@legend F·NumFile S·FileSize N·Entry C·BadEntry B·BadBlock Ke·KeyError D·DroppedEntry L·Level Q·SeqNum T·TimeElapsed
+16:23:40.937586 version@stat F·[] S·0B[] Sc·[]
+16:23:40.937634 db@open opening
+16:23:40.937737 journal@recovery F·1
+16:23:40.938685 journal@recovery recovering @108
+16:23:40.941073 version@stat F·[] S·0B[] Sc·[]
+16:23:40.965226 db@janitor F·2 G·0
+16:23:40.965285 db@open done T·27.629614ms
+=============== Dec 15, 2023 (IST) ===============
+16:24:05.795420 log@legend F·NumFile S·FileSize N·Entry C·BadEntry B·BadBlock Ke·KeyError D·DroppedEntry L·Level Q·SeqNum T·TimeElapsed
+16:24:05.795971 version@stat F·[] S·0B[] Sc·[]
+16:24:05.796024 db@open opening
+16:24:05.796125 journal@recovery F·1
+16:24:05.796772 journal@recovery recovering @110
+16:24:05.799399 version@stat F·[] S·0B[] Sc·[]
+16:24:05.819813 db@janitor F·2 G·0
+16:24:05.819906 db@open done T·23.835071ms
+=============== Dec 15, 2023 (IST) ===============
+16:24:59.619344 log@legend F·NumFile S·FileSize N·Entry C·BadEntry B·BadBlock Ke·KeyError D·DroppedEntry L·Level Q·SeqNum T·TimeElapsed
+16:24:59.619943 version@stat F·[] S·0B[] Sc·[]
+16:24:59.619990 db@open opening
+16:24:59.620089 journal@recovery F·1
+16:24:59.620745 journal@recovery recovering @112
+16:24:59.623108 version@stat F·[] S·0B[] Sc·[]
+16:24:59.643207 db@janitor F·2 G·0
+16:24:59.643258 db@open done T·23.250251ms
+=============== Dec 15, 2023 (IST) ===============
+16:26:15.802205 log@legend F·NumFile S·FileSize N·Entry C·BadEntry B·BadBlock Ke·KeyError D·DroppedEntry L·Level Q·SeqNum T·TimeElapsed
+16:26:15.802714 version@stat F·[] S·0B[] Sc·[]
+16:26:15.802761 db@open opening
+16:26:15.802877 journal@recovery F·1
+16:26:15.803462 journal@recovery recovering @114
+16:26:15.805961 version@stat F·[] S·0B[] Sc·[]
+16:26:15.829866 db@janitor F·2 G·0
+16:26:15.829920 db@open done T·27.139333ms
+=============== Dec 15, 2023 (IST) ===============
+16:30:21.745592 log@legend F·NumFile S·FileSize N·Entry C·BadEntry B·BadBlock Ke·KeyError D·DroppedEntry L·Level Q·SeqNum T·TimeElapsed
+16:30:21.745941 version@stat F·[] S·0B[] Sc·[]
+16:30:21.745988 db@open opening
+16:30:21.746088 journal@recovery F·1
+16:30:21.746796 journal@recovery recovering @116
+16:30:21.749051 version@stat F·[] S·0B[] Sc·[]
+16:30:21.769747 db@janitor F·2 G·0
+16:30:21.769805 db@open done T·23.796291ms
+=============== Dec 15, 2023 (IST) ===============
+16:40:04.195145 log@legend F·NumFile S·FileSize N·Entry C·BadEntry B·BadBlock Ke·KeyError D·DroppedEntry L·Level Q·SeqNum T·TimeElapsed
+16:40:04.195778 version@stat F·[] S·0B[] Sc·[]
+16:40:04.195829 db@open opening
+16:40:04.195961 journal@recovery F·1
+16:40:04.196758 journal@recovery recovering @118
+16:40:04.198916 version@stat F·[] S·0B[] Sc·[]
+16:40:04.212103 db@janitor F·2 G·0
+16:40:04.212154 db@open done T·16.303756ms
+=============== Dec 15, 2023 (IST) ===============
+16:42:58.182660 log@legend F·NumFile S·FileSize N·Entry C·BadEntry B·BadBlock Ke·KeyError D·DroppedEntry L·Level Q·SeqNum T·TimeElapsed
+16:42:58.183133 version@stat F·[] S·0B[] Sc·[]
+16:42:58.183176 db@open opening
+16:42:58.183284 journal@recovery F·1
+16:42:58.184059 journal@recovery recovering @120
+16:42:58.186197 version@stat F·[] S·0B[] Sc·[]
+16:42:58.200166 db@janitor F·2 G·0
+16:42:58.200219 db@open done T·17.024123ms

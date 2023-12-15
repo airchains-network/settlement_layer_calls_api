@@ -1,5 +1,20 @@
 package handler
 
+/*
+Sample GET: 
+http://localhost:8080/delete_exelayer
+
+Sample Request Body: no inputs required
+
+Sample Response Body:
+{
+    "status": false,
+    "data": "",
+    "description": "Cannot delete a chain with batch number greater than 0"
+}
+*/ 
+
+
 import (
 	"context"
 	"github.com/gin-gonic/gin"

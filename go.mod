@@ -3,7 +3,6 @@ module github.com/airchains-studio/settlement_layer_calls_api
 go 1.21.1
 
 require (
-	github.com/airchains-network/airsettle v0.0.0-20231214073610-695f5915d4eb
 	github.com/cosmos/cosmos-sdk v0.47.5
 	github.com/gin-gonic/gin v1.8.1
 	github.com/ignite/cli v0.27.1
@@ -20,6 +19,7 @@ require (
 	github.com/99designs/go-keychain v0.0.0-20191008050251-8e49817e8af4 // indirect
 	github.com/99designs/keyring v1.2.1 // indirect
 	github.com/ChainSafe/go-schnorrkel v0.0.0-20200405005733-88cbf1b4c40d // indirect
+	github.com/airchains-network/airsettle v0.0.0-20231215090508-5d1c2f62589f // indirect
 	github.com/armon/go-metrics v0.4.1 // indirect
 	github.com/beorn7/perks v1.0.1 // indirect
 	github.com/bgentry/speakeasy v0.1.1-0.20220910012023-760eaf8b6816 // indirect

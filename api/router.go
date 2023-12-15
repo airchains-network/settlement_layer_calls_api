@@ -2,8 +2,6 @@ package api
 
 import (
 	"github.com/airchains-studio/settlement_layer_calls_api/api/handler"
-	// "log"
-	// "net/http"
 	"fmt"
     "github.com/gin-gonic/gin"
 	"github.com/ignite/cli/ignite/pkg/cosmosclient"
@@ -54,7 +52,24 @@ func StartAPI(wg *sync.WaitGroup, client cosmosclient.Client, ctx context.Contex
 		handler.HandlePostDeleteExecutionLayer(c,client,ctx, account,addr,db, sAPI)
 	})
 
+
+	// add batch 
+	router.POST("/add_batch", func(c *gin.Context) {
+		handler.HandlePostAddBatch(c,client,ctx, account,addr,db, sAPI)
+	})
+
+	// verify batch
+	router.POST("/verify_batch", func(c *gin.Context) {
+		handler.HandlePostVerifyBatch(c,client,ctx, account,addr,db, sAPI)
+	})
+
+	// get batch 
+	router.GET("/get_batch", func(c *gin.Context) {
+		handler.HandleGetBatch(c,client,ctx, account,addr,db, sAPI)
+	})
 	
+
+
 	// Run the server on given port
 	if err := router.Run(port); err != nil {
 		fmt.Println("Error starting the server:", err)

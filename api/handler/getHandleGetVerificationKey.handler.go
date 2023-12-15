@@ -1,5 +1,23 @@
 package handler
 
+/*
+Sample GET: 
+http://localhost:8080/get_vkey
+
+Sample Request Body: 
+{
+    "chain_id": "f0722463-03f1-485e-8d91-f592cad02d23"
+}
+
+Sample Response Body:
+{
+    "status": true,
+    "data": "{\"vkey\":\"the long long verification_key\"}",
+    "description": "get verification key successfully"
+}
+*/ 
+
+
 import (
 	"context"
 	"github.com/gin-gonic/gin"

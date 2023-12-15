@@ -1,5 +1,19 @@
 package handler
 
+/*
+Sample GET: 
+http://localhost:8080/get_all_exelayer
+
+Sample Request Body: (no inputs required)
+
+Sample Response Body:
+{
+    "status": true,
+    "data": "{\"exelayer\":[{\"validator\":[\"air15nt3l400td56dhvy7tk4pehv2rqu2fw53fw59t\"],\"votingPower\":[\"100\"],\"latestBatch\":\"1\",\"latestMerkleRootHash\":\"0xMerkleRoot\",\"verificationKey\":\"/verificationKey/f0722463-03f1-485e-8d91-f592cad02d23/\",\"chainInfo\":\"some information about the chain, e.g. its made for DeFi\",\"id\":\"f0722463-03f1-485e-8d91-f592cad02d23\",\"creator\":\"air15nt3l400td56dhvy7tk4pehv2rqu2fw53fw59t\"}],\"pagination\":{\"next_key\":null,\"total\":\"1\"}}",
+    "description": "get execution layer successfully"
+}
+*/ 
+
 import (
 	"context"
 	"github.com/gin-gonic/gin"

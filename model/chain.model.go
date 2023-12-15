@@ -43,3 +43,20 @@ type AllExecutionLayersResponseBody struct {
 		Total   string `json:"total"`
 	} `json:"pagination"`
 }
+
+
+// {"batch":{"batchNumber":"1","chainId":"f0722463-03f1-485e-8d91-f592cad02d23","prevMerkleRootHash":"","merkleRootHash":"0xMerkleRoot","zkProof":"zkproof","inputs":["input1","input2"],"verified":"true","batchSubmitter":"air15nt3l400td56dhvy7tk4pehv2rqu2fw53fw59t","batchVerifier":"air15nt3l400td56dhvy7tk4pehv2rqu2fw53fw59t"}}
+type BatchResponseBody struct {
+	Batch struct {
+		BatchNumber    string   `json:"batchNumber"`
+		ChainId        string   `json:"chainId"`
+		PrevMerkleRootHash string   `json:"prevMerkleRootHash"`
+		MerkleRootHash string   `json:"merkleRootHash"`
+		ZkProof        string   `json:"zkProof"`
+		Inputs         []string `json:"inputs"`
+		Verified       string   `json:"verified"`
+		BatchSubmitter string   `json:"batchSubmitter"`
+		BatchVerifier  string   `json:"batchVerifier"`
+	} `json:"batch"`
+}
+
