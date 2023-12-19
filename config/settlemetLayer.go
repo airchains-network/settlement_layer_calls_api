@@ -14,7 +14,7 @@ func SettlementLayer() (client cosmosclient.Client,account cosmosaccount.Account
 	accountName := "admin"
 	accountPath := "./accounts"
 	ctx = context.Background()
-	gasLimit := "300000"
+	gasLimit := "70000000"
 	addressPrefix := "air" // "cosmos"
 
 	sRPC := "http://localhost:26657" // tendermint
