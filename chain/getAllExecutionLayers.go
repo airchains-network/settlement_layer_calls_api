@@ -36,4 +36,5 @@ func GetAllExecutionLayers(sAPI string) (success bool, chainId string){
 
 	// almost impossible case, but still
 	return false, ""
+	
 }

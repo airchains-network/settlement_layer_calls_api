@@ -32,7 +32,7 @@ type RequestBodyAddExecutionLayer struct {
 type RequestBodyAddBatch struct {
 	ChainId string `json:"chain_id"`
 	BatchNumber uint64 `json:"batch_number"`
-	Inputs []string `json:"inputs"`
+	Witness string `json:"witness"`
 }
 
 

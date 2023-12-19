@@ -3,6 +3,7 @@ module github.com/airchains-studio/settlement_layer_calls_api
 go 1.21.1
 
 require (
+	github.com/airchains-network/airsettle v0.0.2
 	github.com/cosmos/cosmos-sdk v0.47.5
 	github.com/gin-gonic/gin v1.8.1
 	github.com/ignite/cli v0.27.1
@@ -19,7 +20,6 @@ require (
 	github.com/99designs/go-keychain v0.0.0-20191008050251-8e49817e8af4 // indirect
 	github.com/99designs/keyring v1.2.1 // indirect
 	github.com/ChainSafe/go-schnorrkel v0.0.0-20200405005733-88cbf1b4c40d // indirect
-	github.com/airchains-network/airsettle v0.0.0-20231215090508-5d1c2f62589f // indirect
 	github.com/armon/go-metrics v0.4.1 // indirect
 	github.com/beorn7/perks v1.0.1 // indirect
 	github.com/bgentry/speakeasy v0.1.1-0.20220910012023-760eaf8b6816 // indirect
@@ -122,13 +122,13 @@ require (
 	github.com/zondax/hid v0.9.1 // indirect
 	github.com/zondax/ledger-go v0.14.1 // indirect
 	go.etcd.io/bbolt v1.3.7 // indirect
-	golang.org/x/crypto v0.11.0 // indirect
-	golang.org/x/exp v0.0.0-20230711153332-06a737ee72cb // indirect
-	golang.org/x/mod v0.11.0 // indirect
+	golang.org/x/crypto v0.12.0 // indirect
+	golang.org/x/exp v0.0.0-20230817173708-d852ddb80c63 // indirect
+	golang.org/x/mod v0.12.0 // indirect
 	golang.org/x/net v0.12.0 // indirect
 	golang.org/x/sync v0.2.0 // indirect
 	golang.org/x/sys v0.11.0 // indirect
-	golang.org/x/term v0.10.0 // indirect
+	golang.org/x/term v0.11.0 // indirect
 	golang.org/x/text v0.12.0 // indirect
 	google.golang.org/genproto v0.0.0-20230706204954-ccb25ca9f130 // indirect
 	google.golang.org/genproto/googleapis/api v0.0.0-20230629202037-9506855d4529 // indirect
@@ -141,3 +141,23 @@ require (
 	pgregory.net/rapid v0.5.5 // indirect
 	sigs.k8s.io/yaml v1.3.0 // indirect
 )
+
+replace github.com/syndtr/goleveldb => github.com/syndtr/goleveldb v1.0.1-0.20210819022825-2ae1ddf74ef7
+
+replace github.com/mattn/go-isatty => github.com/mattn/go-isatty v0.0.18
+
+replace github.com/rs/zerolog => github.com/rs/zerolog v1.29.1
+
+replace github.com/stretchr/testify => github.com/stretchr/testify v1.8.2
+
+replace golang.org/x/crypto => golang.org/x/crypto v0.8.0
+
+replace golang.org/x/exp => golang.org/x/exp v0.0.0-20230515195305-f3d0a9c9a5cc
+
+replace golang.org/x/net => golang.org/x/net v0.9.0
+
+replace golang.org/x/sys => golang.org/x/sys v0.7.0
+
+replace golang.org/x/term => golang.org/x/term v0.7.0
+
+replace golang.org/x/text => golang.org/x/text v0.9.0
