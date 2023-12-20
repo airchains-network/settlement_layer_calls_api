@@ -18,7 +18,7 @@ func formatErrorMessage(err error) string {
 func respondWithError(c *gin.Context,error_msg string) {
 	response := model.ResponseBody{
 		Status : false,
-		Data : "",
+		Data : "nil",
 		Description : error_msg,
 	}
 	c.JSON(http.StatusBadRequest, response)

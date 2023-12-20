@@ -35,7 +35,7 @@ func AdminBalanceCheckerTimer(wg *sync.WaitGroup, ctx context.Context,client cos
 
 		// admin have less than 10 tokens (not enough balance)
 		amountStr := strconv.FormatInt(amount, 10)
-		if amount < 100 {
+		if amount < 10 {
 			InformAdmin("error","Admin dont have enough tokens: " + amountStr)
 		}else{
 			// inform admin
