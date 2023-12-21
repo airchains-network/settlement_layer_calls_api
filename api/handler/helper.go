@@ -1,26 +1,29 @@
-package handler 
+package handler
+
 import (
-	"net/http"
-	"github.com/gin-gonic/gin"
-    "github.com/syndtr/goleveldb/leveldb"
 	"fmt"
 	"github.com/airchains-studio/settlement_layer_calls_api/model"
+	"github.com/gin-gonic/gin"
+	"github.com/syndtr/goleveldb/leveldb"
+	"net/http"
 )
 
 func formatErrorMessage(err error) string {
-    if err == nil {
-        return "No error"
-    }
-    return fmt.Sprintf(err.Error())
+	if err == nil {
+		return "No error"
+	}
+	return fmt.Sprintf(err.Error())
 }
 
 // respondWithError sends a JSON error response
-func respondWithError(c *gin.Context,error_msg string) {
+func respondWithError(c *gin.Context, error_msg string) {
 	response := model.ResponseBody{
-		Status : false,
-		Data : "nil",
-		Description : error_msg,
+		Status:      false,
+		Data:        "nil",
+		Description: error_msg,
 	}
+	fmt.Println("Error", error_msg)
+
 	c.JSON(http.StatusBadRequest, response)
 	return
 }
@@ -28,9 +31,9 @@ func respondWithError(c *gin.Context,error_msg string) {
 // respondWithJSON sends a JSON response
 func respondWithSuccess(c *gin.Context, data string, description string) {
 	response := model.ResponseBody{
-		Status : true,
-		Data : data,
-		Description : description,
+		Status:      true,
+		Data:        data,
+		Description: description,
 	}
 	c.JSON(http.StatusOK, response)
 	return

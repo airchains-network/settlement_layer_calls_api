@@ -40,6 +40,11 @@ func StartAPI(wg *sync.WaitGroup, client cosmosclient.Client, ctx context.Contex
 	})
 
 	// get execution layer by address
+	// router.GET("/get_admin_exelayer", func(c *gin.Context) {
+	// 	handler.HandleGetAdminExecutionLayer(c, client, ctx, account, addr, db, sAPI)
+	// })
+
+	// get execution layer by address
 	router.GET("/getexelayer_by_address", func(c *gin.Context) {
 		handler.HandleGetExecutionLayerByAddress(c, client, ctx, account, addr, db, sAPI)
 	})
@@ -66,6 +71,7 @@ func StartAPI(wg *sync.WaitGroup, client cosmosclient.Client, ctx context.Contex
 
 	// add batch
 	router.POST("/add_batch", func(c *gin.Context) {
+		fmt.Println("add_batch called")
 		handler.HandlePostAddBatch(c, client, ctx, account, addr, db, sAPI)
 	})
 
@@ -79,7 +85,7 @@ func StartAPI(wg *sync.WaitGroup, client cosmosclient.Client, ctx context.Contex
 		handler.HandleGetBatch(c, client, ctx, account, addr, db, sAPI)
 	})
 
-	// * update for multinode sequencer.
+	// * future updates for multinode sequencer.
 	// // add validator  $chainid
 	// router.POST("/add_validator", func(c *gin.Context) {
 	// 	handler.HandlePostAddValidator(c,client,ctx, account,addr,db, sAPI)

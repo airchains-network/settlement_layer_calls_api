@@ -22,6 +22,9 @@ Sample Response Body:
 
 import (
 	"context"
+	"fmt"
+	"time"
+
 	"github.com/airchains-studio/settlement_layer_calls_api/chain"
 	"github.com/airchains-studio/settlement_layer_calls_api/model"
 	"github.com/gin-gonic/gin"
@@ -32,7 +35,6 @@ import (
 
 // HandlePostAPI handles the POST request
 func HandlePostAddBatch(c *gin.Context, client cosmosclient.Client, ctx context.Context, account cosmosaccount.Account, addr string, dbIPaddress *leveldb.DB, sAPI string) {
-
 	// Parse the request body into a struct
 	var requestBody model.RequestBodyAddBatch
 	if err := c.BindJSON(&requestBody); err != nil {
@@ -43,9 +45,13 @@ func HandlePostAddBatch(c *gin.Context, client cosmosclient.Client, ctx context.
 	batchNumber := requestBody.BatchNumber
 	chainId := requestBody.ChainId
 	witness := requestBody.Witness
+	fmt.Println(time.Now().Unix())
+	fmt.Println(batchNumber)
+	fmt.Println(chainId)
+	// fmt.Println(witness)
 
 	// batchNumber, chainId, and witness length can not be 0
-	if batchNumber == 0 || len(chainId) == 0 || len(witness) == 0 {
+	if batchNumber == 0 || len(chainId) == 0 || len(string(witness)) == 0 {
 		respondWithError(c, "BatchNumber, ChainId, and Witness cannot be empty")
 		return
 	}
@@ -56,6 +62,7 @@ func HandlePostAddBatch(c *gin.Context, client cosmosclient.Client, ctx context.
 		return
 	}
 
+	fmt.Println(time.Now().Unix())
 	respondWithSuccess(c, data, "batch add successfully")
 	return
 }

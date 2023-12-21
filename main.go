@@ -45,7 +45,7 @@ func main() {
 			fmt.Println("Error in checking balance", err)
 			return
 		}
-		fmt.Println("Admin wallet have", amount, "tokens \nstarting api...")
+		fmt.Println("Admin have", amount, "tokens \nstarting api...")
 
 		// await 2 seconds
 		time.Sleep(2 * time.Second)

@@ -2,7 +2,6 @@ package chain
 
 import (
 	"net/http"
-	"fmt"
 	"io/ioutil"
 	"encoding/json"
 	"github.com/airchains-studio/settlement_layer_calls_api/model"
@@ -25,15 +24,13 @@ func GetExecutionLayerByAddress(address string, sAPI string) (success bool, chai
 		return false, "Error in Requesting to Execution Layer Blockchain API"
 	}
 
-	fmt.Println(string(body))
-
 	// Check the structure of the response body to determine the appropriate struct
 	var executionLayerResponse model.ExecutionLayerTrueResponseBody
 	if err := json.Unmarshal(body, &executionLayerResponse); err == nil {
 		if len(executionLayerResponse.ExeLayer.ID) == 0 {
 			return false, ""
 		} else {
-			return true , string(body)
+			return true , executionLayerResponse.ExeLayer.ID
 		}
 	}
 

@@ -28,8 +28,6 @@ func GetBatch(chainId string, batchNumber uint64, sAPI string) (success bool, da
 		return false, "Error in Requesting to Execution Layer Blockchain API"
 	}
 
-	// fmt.Println(string(body))
-
 	// Check the structure of the response body to determine the appropriate struct
 	var batchResponse model.BatchResponseBody
 	if err := json.Unmarshal(body, &batchResponse); err == nil {

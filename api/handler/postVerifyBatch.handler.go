@@ -1,10 +1,10 @@
 package handler
 
 /*
-Sample Post: 
+Sample Post:
 http://localhost:8080/verify_batch
 
-Sample Request Body: 
+Sample Request Body:
 {
     "batch_number":1,
     "chain_id": "f0722463-03f1-485e-8d91-f592cad02d23",
@@ -19,16 +19,16 @@ Sample Response Body:
     "data": "",
     "description": "error code: '18' msg: 'failed to execute message; message index: 0: invalid request'"
 }
-*/ 
+*/
 
 import (
 	"context"
-	"github.com/gin-gonic/gin"
 	"github.com/airchains-studio/settlement_layer_calls_api/chain"
+	"github.com/airchains-studio/settlement_layer_calls_api/model"
+	"github.com/gin-gonic/gin"
 	"github.com/ignite/cli/ignite/pkg/cosmosaccount"
 	cosmosclient "github.com/ignite/cli/ignite/pkg/cosmosclient"
 	"github.com/syndtr/goleveldb/leveldb"
-	"github.com/airchains-studio/settlement_layer_calls_api/model"
 )
 
 // HandlePostAPI handles the POST request
@@ -36,8 +36,7 @@ func HandlePostVerifyBatch(c *gin.Context, client cosmosclient.Client, ctx conte
 
 	// Parse the request body into a struct
 	var requestBody model.RequestBodyVerifyBatch
-	if err := c.BindJSON(&requestBody); 
-	err != nil {
+	if err := c.BindJSON(&requestBody); err != nil {
 		respondWithError(c, "Invalid JSON format")
 		return
 	}
@@ -49,17 +48,17 @@ func HandlePostVerifyBatch(c *gin.Context, client cosmosclient.Client, ctx conte
 	zkProof := requestBody.ZkProof
 
 	// data can not be empty
-	if batchNumber == 0 || chainId == "" || merkleRootHash == "" || prevMerkleRoot == "" || zkProof == "" {
+	if batchNumber == 0 || chainId == "" || merkleRootHash == "" || prevMerkleRoot == "" || string(zkProof) == "" {
 		respondWithError(c, "Invalid JSON format")
 		return
 	}
 
-	success, data, error_msg:= chain.VerifyBatch(batchNumber, chainId, merkleRootHash, prevMerkleRoot, zkProof, client, ctx, account, addr, sAPI)
+	success, data, error_msg := chain.VerifyBatch(batchNumber, chainId, merkleRootHash, prevMerkleRoot, zkProof, client, ctx, account, addr, sAPI)
 	if !success {
 		respondWithError(c, error_msg)
 		return
 	}
 
-	respondWithSuccess(c, data , "verify batch successfully")
+	respondWithSuccess(c, data, "verify batch successfully")
 	return
 }

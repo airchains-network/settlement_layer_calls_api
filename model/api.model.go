@@ -32,7 +32,7 @@ type RequestBodyAddExecutionLayer struct {
 type RequestBodyAddBatch struct {
 	ChainId string `json:"chain_id"`
 	BatchNumber uint64 `json:"batch_number"`
-	Witness string `json:"witness"`
+	Witness []byte `json:"witness"`
 }
 
 
@@ -41,7 +41,7 @@ type RequestBodyVerifyBatch struct {
 	ChainId        string `json:"chain_id"`
 	MerkleRootHash string `json:"merkle_root_hash"`
 	PrevMerkleRoot string `json:"prev_merkle_root"`
-	ZkProof        string `json:"zk_proof"`
+	ZkProof        []byte `json:"zk_proof"`
 }
 
 type RequestBodyGetBatch struct {
