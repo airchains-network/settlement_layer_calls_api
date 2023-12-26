@@ -31,7 +31,6 @@ func RequestFaucet(address string) (err error) {
 		fmt.Println("Error: Unexpected status code", resp.StatusCode)
 		return err
 	}
-
 	return nil
 
 }
