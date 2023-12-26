@@ -20,12 +20,13 @@ Sample Response Body:
 
 import (
 	"context"
+
+	"github.com/airchains-network/settlement_layer_calls_api/chain"
+	"github.com/airchains-network/settlement_layer_calls_api/model"
 	"github.com/gin-gonic/gin"
-	"github.com/airchains-studio/settlement_layer_calls_api/chain"
 	"github.com/ignite/cli/ignite/pkg/cosmosaccount"
 	cosmosclient "github.com/ignite/cli/ignite/pkg/cosmosclient"
 	"github.com/syndtr/goleveldb/leveldb"
-	"github.com/airchains-studio/settlement_layer_calls_api/model"
 )
 
 // HandlePostAPI handles the POST request
@@ -33,8 +34,7 @@ func HandleGetBatch(c *gin.Context, client cosmosclient.Client, ctx context.Cont
 
 	// Parse the request body into a struct
 	var requestBody model.RequestBodyGetBatch
-	if err := c.BindJSON(&requestBody); 
-	err != nil {
+	if err := c.BindJSON(&requestBody); err != nil {
 		respondWithError(c, "Invalid JSON format")
 		return
 	}
@@ -48,12 +48,12 @@ func HandleGetBatch(c *gin.Context, client cosmosclient.Client, ctx context.Cont
 		respondWithError(c, "Invalid JSON format")
 		return
 	}
-	
-	success, batchDetils := chain.GetBatch(chainId, batchNumber ,sAPI)
+
+	success, batchDetils := chain.GetBatch(chainId, batchNumber, sAPI)
 	if success {
-		respondWithSuccess(c, batchDetils , "get batch details successfully")
+		respondWithSuccess(c, batchDetils, "get batch details successfully")
 		return
-	}else{
+	} else {
 		respondWithError(c, "error in getting batch details")
 		return
 	}

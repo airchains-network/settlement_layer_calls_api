@@ -1,27 +1,26 @@
 package chain
 
 import (
-	"net/http"
+	"encoding/json"
 	"fmt"
 	"io/ioutil"
-	"encoding/json"
-	"github.com/airchains-studio/settlement_layer_calls_api/model"
+	"net/http"
+
+	"github.com/airchains-network/settlement_layer_calls_api/model"
 )
 
-
-func GetBatch(chainId string, batchNumber uint64, sAPI string) (success bool, data string){
+func GetBatch(chainId string, batchNumber uint64, sAPI string) (success bool, data string) {
 
 	strBatchNumber := fmt.Sprint(batchNumber)
-	apiURL := sAPI+"/airchains-network/airsettle/airsettle/get_batch/"+strBatchNumber+"/"+chainId
+	apiURL := sAPI + "/airchains-network/airsettle/airsettle/get_batch/" + strBatchNumber + "/" + chainId
 
 	// Make the GET request
 	response, err := http.Get(apiURL)
 	if err != nil {
-		return false , ""
+		return false, ""
 	}
 	defer response.Body.Close()
 
-	
 	// Read the response body
 	body, err := ioutil.ReadAll(response.Body)
 	if err != nil {
@@ -34,10 +33,10 @@ func GetBatch(chainId string, batchNumber uint64, sAPI string) (success bool, da
 		if len(batchResponse.Batch.ChainId) == 0 { // check anyone data
 			return false, ""
 		} else {
-			return true , string(body)
+			return true, string(body)
 		}
 	}
-	
+
 	// if not both data type
 	return false, ""
 }

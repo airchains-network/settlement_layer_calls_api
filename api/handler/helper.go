@@ -2,10 +2,11 @@ package handler
 
 import (
 	"fmt"
-	"github.com/airchains-studio/settlement_layer_calls_api/model"
+	"net/http"
+
+	"github.com/airchains-network/settlement_layer_calls_api/model"
 	"github.com/gin-gonic/gin"
 	"github.com/syndtr/goleveldb/leveldb"
-	"net/http"
 )
 
 func formatErrorMessage(err error) string {

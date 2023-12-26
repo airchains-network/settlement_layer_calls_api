@@ -3,15 +3,16 @@ package api
 import (
 	"context"
 	"fmt"
-	"github.com/airchains-studio/settlement_layer_calls_api/api/handler"
+	"log"
+	"os"
+	"sync"
+
+	"github.com/airchains-network/settlement_layer_calls_api/api/handler"
 	"github.com/gin-gonic/gin"
 	"github.com/ignite/cli/ignite/pkg/cosmosaccount"
 	"github.com/ignite/cli/ignite/pkg/cosmosclient"
 	"github.com/joho/godotenv"
 	"github.com/syndtr/goleveldb/leveldb"
-	"log"
-	"os"
-	"sync"
 )
 
 func StartAPI(wg *sync.WaitGroup, client cosmosclient.Client, ctx context.Context, account cosmosaccount.Account, addr string, db *leveldb.DB, sAPI string) {

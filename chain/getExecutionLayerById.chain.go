@@ -1,20 +1,21 @@
 package chain
 
 import (
-	"net/http"
-	"io/ioutil"
 	"encoding/json"
-	"github.com/airchains-studio/settlement_layer_calls_api/model"
+	"io/ioutil"
+	"net/http"
+
+	"github.com/airchains-network/settlement_layer_calls_api/model"
 )
 
-func GetExecutionLayerById(id string, sAPI string) (success bool, chainId string){
+func GetExecutionLayerById(id string, sAPI string) (success bool, chainId string) {
 
-	apiURL := sAPI+"/airchains-network/airsettle/airsettle/show_execution_layer_by_id/"+id
+	apiURL := sAPI + "/airchains-network/airsettle/airsettle/show_execution_layer_by_id/" + id
 
 	// Make the GET request
 	response, err := http.Get(apiURL)
 	if err != nil {
-		return false , ""
+		return false, ""
 	}
 	defer response.Body.Close()
 
@@ -29,8 +30,8 @@ func GetExecutionLayerById(id string, sAPI string) (success bool, chainId string
 	if err := json.Unmarshal(body, &executionLayerResponse); err == nil {
 		if len(executionLayerResponse.ExeLayer.ID) == 0 {
 			return false, ""
-		}else{
-			return true , string(body)
+		} else {
+			return true, string(body)
 		}
 	}
 
@@ -40,7 +41,7 @@ func GetExecutionLayerById(id string, sAPI string) (success bool, chainId string
 		// Successfully unmarshaled into ExecutionLayerErrorResponseBody
 		return false, ""
 	}
-	
+
 	// if not both data type
 	return false, ""
 }

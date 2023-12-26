@@ -1,10 +1,10 @@
 package handler
 
 /*
-Sample GET: 
+Sample GET:
 http://localhost:8080/get_vkey
 
-Sample Request Body: 
+Sample Request Body:
 {
     "chain_id": "f0722463-03f1-485e-8d91-f592cad02d23"
 }
@@ -15,17 +15,17 @@ Sample Response Body:
     "data": "{\"vkey\":\"the long long verification_key\"}",
     "description": "get verification key successfully"
 }
-*/ 
-
+*/
 
 import (
 	"context"
+
+	"github.com/airchains-network/settlement_layer_calls_api/chain"
+	"github.com/airchains-network/settlement_layer_calls_api/model"
 	"github.com/gin-gonic/gin"
-	"github.com/airchains-studio/settlement_layer_calls_api/chain"
 	"github.com/ignite/cli/ignite/pkg/cosmosaccount"
 	cosmosclient "github.com/ignite/cli/ignite/pkg/cosmosclient"
 	"github.com/syndtr/goleveldb/leveldb"
-	"github.com/airchains-studio/settlement_layer_calls_api/model"
 )
 
 // HandlePostAPI handles the POST request
@@ -33,8 +33,7 @@ func HandleGetVerificationKeyById(c *gin.Context, client cosmosclient.Client, ct
 
 	// Parse the request body into a struct
 	var requestBody model.RequestBodyGetVerificationKeyById
-	if err := c.BindJSON(&requestBody); 
-	err != nil {
+	if err := c.BindJSON(&requestBody); err != nil {
 		respondWithError(c, "Invalid JSON format")
 		return
 	}
@@ -46,12 +45,12 @@ func HandleGetVerificationKeyById(c *gin.Context, client cosmosclient.Client, ct
 		return
 	}
 
-	success, chainDetails := chain.GetVerificationKeyById(chainId,sAPI)
+	success, chainDetails := chain.GetVerificationKeyById(chainId, sAPI)
 
 	if success {
-		respondWithSuccess(c, chainDetails , "get verification key successfully")
+		respondWithSuccess(c, chainDetails, "get verification key successfully")
 		return
-	}else{
+	} else {
 		respondWithError(c, "Verification key not found in this chain id")
 		return
 	}

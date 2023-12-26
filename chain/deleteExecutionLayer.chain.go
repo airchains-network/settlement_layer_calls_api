@@ -4,13 +4,14 @@ import (
 	"context"
 	"encoding/json"
 	"fmt"
-	"github.com/airchains-network/airsettle/x/airsettle/types"
-	"github.com/airchains-studio/settlement_layer_calls_api/model"
-	"github.com/ignite/cli/ignite/pkg/cosmosaccount"
-	cosmosclient "github.com/ignite/cli/ignite/pkg/cosmosclient"
 	"io/ioutil"
 	"net/http"
 	"strconv"
+
+	"github.com/airchains-network/airsettle/x/airsettle/types"
+	"github.com/airchains-network/settlement_layer_calls_api/model"
+	"github.com/ignite/cli/ignite/pkg/cosmosaccount"
+	cosmosclient "github.com/ignite/cli/ignite/pkg/cosmosclient"
 )
 
 func DeleteExecutionLayer(client cosmosclient.Client, ctx context.Context, account cosmosaccount.Account, addr string, sAPI string) (success bool, data string, error_msg string) {

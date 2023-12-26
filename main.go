@@ -5,10 +5,10 @@ import (
 	"sync"
 	"time"
 
-	"github.com/airchains-studio/settlement_layer_calls_api/admin"
-	"github.com/airchains-studio/settlement_layer_calls_api/api"
-	"github.com/airchains-studio/settlement_layer_calls_api/chain"
-	"github.com/airchains-studio/settlement_layer_calls_api/config"
+	"github.com/airchains-network/settlement_layer_calls_api/admin"
+	"github.com/airchains-network/settlement_layer_calls_api/api"
+	"github.com/airchains-network/settlement_layer_calls_api/chain"
+	"github.com/airchains-network/settlement_layer_calls_api/config"
 )
 
 func main() {
