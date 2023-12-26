@@ -8,7 +8,7 @@ import (
 )
 
 func RequestFaucet(address string) (err error) {
-	url := "http://localhost:8081/faucet"
+	url := "https://faucet.airchains.network/faucet"
 	data := map[string]string{"address": address}
 
 	// Convert data to JSON
@@ -22,7 +22,7 @@ func RequestFaucet(address string) (err error) {
 	resp, err := http.Post(url, "application/json", bytes.NewBuffer(jsonData))
 	if err != nil {
 		fmt.Println("Error making POST request:", err)
-		return	err
+		return err
 	}
 	defer resp.Body.Close()
 
