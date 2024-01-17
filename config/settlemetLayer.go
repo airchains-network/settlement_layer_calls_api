@@ -18,7 +18,7 @@ func SettlementLayer() (client cosmosclient.Client, account cosmosaccount.Accoun
 	gasLimit := "70000000"
 	addressPrefix := "air" // "cosmos"
 
-	sRPC := "https://devnet-jrpc.airchains.network" // tendermint
+	sRPC := "https://devnet-jrpc.airchains.network:443" // tendermint
 	sAPI = "https://devnet.airchains.network"       // Blockchain API
 
 	client, err := cosmosclient.New(ctx, cosmosclient.WithGas(gasLimit), cosmosclient.WithAddressPrefix(addressPrefix), cosmosclient.WithNodeAddress(sRPC), cosmosclient.WithKeyringDir(accountPath))

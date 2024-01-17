@@ -27,7 +27,7 @@ func main() {
 	}
 
 	// call faucet (if balance is 0)
-	if amount < 10 || !isBalance {
+	if amount < 3 || !isBalance {
 		fmt.Println("admin currently don't have faucet, requesting faucet from this address:", addr)
 
 		// calling faucet api

@@ -8,8 +8,8 @@ import (
 )
 
 func RequestFaucet(address string) (err error) {
-	url := "https://faucet.airchains.network/faucet"
-	data := map[string]string{"address": address}
+	url := "https://biqmfxzlbn.airchains.co/faucet-api/faucet"
+	data := map[string]string{"address": address, "denom": "dair"}
 
 	// Convert data to JSON
 	jsonData, err := json.Marshal(data)
